@@ -14,7 +14,10 @@ class ModifyProdiTable extends Migration
     public function up()
     {
         Schema::table('prodi', function (Blueprint $table) {
-            //
+            $table->bigInteger('id', 20)->unsigned();
+            $table->char('kode_prodi', 5)->unique();
+            $table->string('program_studi', 25);
+            $table->timestamps();
         });
     }
 
